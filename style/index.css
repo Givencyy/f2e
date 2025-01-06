@@ -1,5 +1,11 @@
 @charset "utf-8";
 
+/* variables */
+:root {
+    --primary-color: #24b4d7;
+    --opacity-color: rgba(255, 255, 255, .3);
+}
+
 /* reset */
 body {
     font-family: Arial, Helvetica,"Noto Sans TC", sans-serif;
@@ -16,8 +22,15 @@ img {
     background-color: pink;
     display: flex;
     justify-content: space-between;
-    /* 把挑戰自我那行置中排列 */
+    /* 把挑戰自我那行垂直置中排列 */
     align-items: center;
+}
+
+.header-head,
+.header-body,
+.header-foot {
+    padding: .5rem .7rem;
+
 }
 
 .header-foot {
@@ -31,7 +44,76 @@ img {
     display: flex;
 }
 
+.nav-li {
+    margin-left: 1rem;
+}
+
+.nav-link {
+    color: var(--primary-color);
+    /* color: #24b4d7; */
+    text-decoration: none;
+}
+
+/* 滑入的時候加上底線 */
+.nav-link:hover {
+    text-decoration: underline;
+}
 
 .nav-btnWrap {
     display: none;
+}
+
+/* banner */
+.banner {
+    position: relative;
+    background-color: pink;
+    aspect-ratio:  16 / 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.banner-head {
+    padding: 5rem;
+    z-index: 2;
+    position: relative;
+    background-image: linear-gradient(
+        -45deg,
+        /* rgba(255, 255, 255, .4) 0%,
+        rgba(255, 255, 255, .4) 25%,
+        transparent 26%,
+        transparent 50%,
+        rgba(255, 255, 255, .4) 51%,
+        rgba(255, 255, 255, .4) 75%,
+        transparent 75%,
+        transparent 100% */
+        var(--opacity-color) 0%,
+        var(--opacity-color) 25%,
+        transparent 26%,
+        transparent 50%,
+        var(--opacity-color) 51%,
+        var(--opacity-color) 75%,
+        transparent 75%,
+        transparent 100%
+
+    );
+    background-size: 7px 7px;
+}
+
+.banner-body {
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+.banner-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background-color: pink;
 }
